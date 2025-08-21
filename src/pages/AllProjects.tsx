@@ -24,7 +24,7 @@ const projects: Project[] = [
     image: 'https://images.unsplash.com/photo-1579389083078-4e7018379f7e?q=80&w=2070',
     technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Redux'],
     demoUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/D216-cloud/smar_job_internship-p--main',
   },
   {
     title: 'AI Chat Application',
@@ -32,15 +32,15 @@ const projects: Project[] = [
     image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=2070',
     technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
     demoUrl: 'https://topic-chat-flow-main-main.vercel.app/',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/D216-cloud/topic-chat-flow-main-main',
   },
   {
     title: 'Modern Portfolio',
     description: 'My personal portfolio showcasing projects and skills. Features dark mode, responsive design, and interactive components.',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    demoUrl: window.location.origin,
-    githubUrl: '#',
+    demoUrl: 'https://modern-portfolio-luminary-84-main.onrender.com',
+    githubUrl: 'https://github.com/D216-cloud/modern-portfolio-luminary-84-main',
   },
 ];
 
