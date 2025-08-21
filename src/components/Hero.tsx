@@ -84,7 +84,7 @@ const Hero = () => {
               </Button>
             </Link>
             <a
-              href="/resume-deepak-maheta.pdf"
+              href="/deepak maheta/resume-deepak-maheta.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -110,7 +110,7 @@ const Hero = () => {
             </div>
             <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-coral shadow-xl hover:shadow-2xl transform hover:scale-[1.03] transition duration-300 relative z-10 bg-white/70 dark:bg-gray-900/60 backdrop-blur">
               <img
-                src="/deepak-uploads/user-hero.jpg"
+                src="/deepak maheta/user-hero.png"
                 alt="Deepak Maheta"
                 className="w-full h-full object-cover"
               />

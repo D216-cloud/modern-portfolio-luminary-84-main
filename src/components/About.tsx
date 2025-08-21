@@ -66,7 +66,7 @@ const About = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a 
-                  href="/resume-deepak-maheta.pdf" 
+                  href="/deepak maheta/resume-deepak-maheta.pdf" 
                   download="Deepak_Maheta_Resume.pdf"
                   className="group flex items-center justify-center gap-3 bg-coral hover:bg-coral-dark text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
