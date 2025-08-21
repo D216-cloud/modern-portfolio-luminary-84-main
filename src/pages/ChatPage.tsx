@@ -16,6 +16,8 @@ export default function ChatPage() {
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [manualApiKey, setManualApiKey] = useState('');
+  const [apiConnected, setApiConnected] = useState(false);
   const endRef = useRef<HTMLDivElement | null>(null);
   const siteHeaders = useMemo(() => {
     const referer = (import.meta.env.VITE_SITE_URL as string) || (typeof window !== 'undefined' ? window.location.origin : '');
@@ -25,20 +27,27 @@ export default function ChatPage() {
 
   useEffect(() => { endRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages, loading]);
 
+  const getApiKey = () => {
+    if (manualApiKey.trim()) return manualApiKey.trim();
+    return (import.meta.env.VITE_DEEPSEEK_API_KEY as string | undefined)
+      || (import.meta.env.VITE_OPENROUTER_API_KEY as string | undefined);
+  };
+
   const send = async () => {
     if (!input.trim() || loading) return;
     const nextUser: Msg = { id: Date.now(), role: 'user', content: input };
     setMessages(prev => [...prev, nextUser]);
     setInput('');
 
-    const apiKey = (import.meta.env.VITE_DEEPSEEK_API_KEY as string | undefined)
-      || (import.meta.env.VITE_OPENROUTER_API_KEY as string | undefined);
+    const apiKey = getApiKey();
     if (!apiKey) {
-      setMessages(prev => [...prev, { id: Date.now()+1, role: 'assistant', content: 'AI is not configured. Add VITE_DEEPSEEK_API_KEY (or VITE_OPENROUTER_API_KEY) in .env and restart the dev server.' }]);
+      setMessages(prev => [...prev, { id: Date.now()+1, role: 'assistant', content: 'AI is not configured. Enter an API key above or add VITE_DEEPSEEK_API_KEY (or VITE_OPENROUTER_API_KEY) in .env and restart the dev server.' }]);
+      setApiConnected(false);
       return;
     }
 
     setLoading(true);
+    setApiConnected(true);
     try {
       const history = [
         { role: 'system', content: assistantSystemPrompt },
@@ -77,11 +86,34 @@ export default function ChatPage() {
       <NavBar />
       <main className="flex-grow container mx-auto px-4 mt-24 mb-6">
         <div className="max-w-3xl mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm p-4 md:p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-coral/10 text-coral text-xs font-medium">
-              <Bot className="w-4 h-4" /> AI Assistant
-            </span>
-            <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-100">DeepSeek Chat</h1>
+          <div className="flex flex-col gap-2 mb-4">
+            <div className="flex items-center gap-2">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-coral/10 text-coral text-xs font-medium">
+                <Bot className="w-4 h-4" /> AI Assistant
+              </span>
+              <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-100">DeepSeek Chat</h1>
+            </div>
+            <div className="flex flex-col md:flex-row gap-2 items-center mt-2">
+              <Input
+                value={manualApiKey}
+                onChange={e => setManualApiKey(e.target.value)}
+                placeholder="Enter API Key (optional, local only)"
+                className="w-full md:w-96"
+                type="password"
+                autoComplete="off"
+              />
+              <Button
+                type="button"
+                className={`ml-0 md:ml-2 px-4 py-2 ${apiConnected ? 'bg-emerald-500 hover:bg-emerald-600' : 'bg-coral hover:bg-coral-dark'} text-white`}
+                onClick={() => setApiConnected(!!getApiKey())}
+              >
+                {apiConnected ? 'Connected' : 'Connect'}
+              </Button>
+              {manualApiKey && (
+                <span className="text-xs text-gray-500 ml-2">(Manual key used, not saved)</span>
+              )}
+            </div>
+            <div className="text-xs text-gray-400 mt-1">You can use your own API key above, or set it in the .env file for persistent use.</div>
           </div>
 
       <div className="h-[60vh] overflow-y-auto space-y-3 p-2 bg-gray-50 dark:bg-gray-800 rounded-md">
