@@ -42,6 +42,14 @@ const projects: Project[] = [
     demoUrl: 'https://modern-portfolio-luminary-84-main.onrender.com',
     githubUrl: 'https://github.com/D216-cloud/modern-portfolio-luminary-84-main',
   },
+  {
+    title: 'ScoreMyResume',
+    description: 'This section highlights my ongoing and recent projects, demonstrating my skills in building modern web applications using React, TypeScript, Tailwind CSS, and other cutting-edge technologies. Each project showcases a unique solution, from AI-powered chat platforms to resume analysis tools, reflecting my passion for creating impactful and user-friendly digital experiences.',
+    image: 'https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?q=80&w=2070',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'pdfjs-dist', 'Vercel'],
+    demoUrl: 'https://score-my-resume-rust.vercel.app/',
+    githubUrl: 'https://github.com/D216-cloud/ScoreMyResume',
+  },
 ];
 
 const AllProjects = () => {
