@@ -39,7 +39,7 @@ const projects: Project[] = [
     description: 'My personal portfolio showcasing projects and skills. Features dark mode, responsive design, and interactive components.',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    demoUrl: 'https://modern-portfolio-luminary-84-main.onrender.com',
+    demoUrl: 'https://modern-portfolio-luminary-84-main-9xkh.onrender.com/',
     githubUrl: 'https://github.com/D216-cloud/modern-portfolio-luminary-84-main',
   },
   {
