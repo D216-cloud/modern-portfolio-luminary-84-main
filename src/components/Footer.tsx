@@ -68,8 +68,8 @@ const Footer = () => {
           
           <div>
             <h3 className="text-lg font-bold mb-3">Contact</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-2">deepak.maheta117671@marwadiuniversity.ac.in</p>
-            <p className="text-gray-600 dark:text-gray-400">+91 9876543210</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-2">deepakmaheta49@gmail.com</p>
+            <p className="text-gray-600 dark:text-gray-400">8849719200</p>
           </div>
         </div>
         

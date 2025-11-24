@@ -17,8 +17,8 @@ const navLinks: NavLink[] = [
   { id: 'skills', title: 'Skills', path: '/skills' },
   { id: 'projects', title: 'Projects', path: '/projects' },
   { id: 'education', title: 'Education', path: '/education' },
-  { id: 'chat', title: 'Chat', path: '/chat' },
   { id: 'contact', title: 'Contact', path: '/contact' },
+  { id: 'resume', title: 'Resume', path: '#' },
 ];
 
 const NavBar = () => {
@@ -57,14 +57,27 @@ const NavBar = () => {
           <ul className="flex gap-8">
             {navLinks.map((link) => (
               <li key={link.id}>
-                <Link 
-                  to={link.path}
-                  className={`nav-item text-base font-medium hover:text-coral transition-colors ${
-                    link.path === location.pathname ? 'active-nav-item text-coral underline decoration-coral/50 underline-offset-8' : ''
-                  }`}
-                >
-                  {link.title}
-                </Link>
+                {link.id === 'resume' ? (
+                  <a 
+                    href="/deepak maheta/mahetadeepak_cv(1.0).pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`nav-item text-base font-medium hover:text-coral transition-colors ${
+                      location.pathname === '/resume' ? 'active-nav-item text-coral underline decoration-coral/50 underline-offset-8' : ''
+                    }`}
+                  >
+                    {link.title}
+                  </a>
+                ) : (
+                  <Link 
+                    to={link.path}
+                    className={`nav-item text-base font-medium hover:text-coral transition-colors ${
+                      link.path === location.pathname ? 'active-nav-item text-coral underline decoration-coral/50 underline-offset-8' : ''
+                    }`}
+                  >
+                    {link.title}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -106,22 +119,40 @@ const NavBar = () => {
                   animationDelay: isMenuOpen ? `${index * 0.1}s` : '0s' 
                 }}
               >
-                <Link
-                  to={link.path}
-                  className={`block py-3 px-2 rounded-lg transition-all duration-300 hover:bg-coral/10 hover:text-coral ${
-                    link.path === location.pathname 
-                      ? 'text-coral font-medium bg-coral/5 border-l-4 border-coral' 
-                      : 'text-gray-700 dark:text-gray-200'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <span className="flex items-center gap-2">
-                    {link.title}
-                    {link.path === location.pathname && (
-                      <span className="w-2 h-2 bg-coral rounded-full animate-pulse"></span>
-                    )}
-                  </span>
-                </Link>
+                {link.id === 'resume' ? (
+                  <a
+                    href="/deepak maheta/mahetadeepak_cv(1.0).pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block py-3 px-2 rounded-lg transition-all duration-300 hover:bg-coral/10 hover:text-coral ${
+                      location.pathname === '/resume' 
+                        ? 'text-coral font-medium bg-coral/5 border-l-4 border-coral' 
+                        : 'text-gray-700 dark:text-gray-200'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span className="flex items-center gap-2">
+                      {link.title}
+                    </span>
+                  </a>
+                ) : (
+                  <Link
+                    to={link.path}
+                    className={`block py-3 px-2 rounded-lg transition-all duration-300 hover:bg-coral/10 hover:text-coral ${
+                      link.path === location.pathname 
+                        ? 'text-coral font-medium bg-coral/5 border-l-4 border-coral' 
+                        : 'text-gray-700 dark:text-gray-200'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span className="flex items-center gap-2">
+                      {link.title}
+                      {link.path === location.pathname && (
+                        <span className="w-2 h-2 bg-coral rounded-full animate-pulse"></span>
+                      )}
+                    </span>
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

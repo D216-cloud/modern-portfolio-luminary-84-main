@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Layout, Code2, Database, Beaker, FileCode2, Brain, Award, Star } from 'lucide-react';
+import { Layout, Code2, Database, Beaker, FileCode2, Brain, Award, Star, X } from 'lucide-react';
 
 interface Skill {
   name: string;
@@ -35,16 +35,10 @@ const skills: Skill[] = [
     color: '#4DB33D',
   },
   {
-    name: 'Python',
-    percentage: 70,
-    icon: <Beaker className="w-10 h-10" />,
-    color: '#3776AB',
-  },
-  {
-    name: 'Data Analytics',
-    percentage: 65,
-    icon: <Brain className="w-10 h-10" />,
-    color: '#EE4C2C',
+    name: 'Java',
+    percentage: 75,
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="#ED8B00"><path d="M12 14.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-1.5-9.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm9 0c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm-9 9c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm9 0c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm-9 9c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm9 0c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5z"/></svg>,
+    color: '#ED8B00',
   },
   {
     name: 'TypeScript',
@@ -69,6 +63,52 @@ const skills: Skill[] = [
 const Skills = () => {
   const skillsRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Skill details data
+  const skillDetails: Record<string, { description: string; experience: string; projects: string[] }> = {
+    'HTML & CSS': {
+      description: 'Markup and styling languages for creating web pages.',
+      experience: '3+ years',
+      projects: ['Portfolio Website', 'E-commerce UI', 'Dashboard Templates']
+    },
+    'JavaScript': {
+      description: 'High-level programming language for web development.',
+      experience: '3+ years',
+      projects: ['Interactive Web Apps', 'API Integrations', 'Game Development']
+    },
+    'React': {
+      description: 'JavaScript library for building user interfaces.',
+      experience: '2+ years',
+      projects: ['Portfolio Website', 'Chat Application', 'Task Manager']
+    },
+    'MongoDB': {
+      description: 'NoSQL database for storing flexible document-based data.',
+      experience: '1+ years',
+      projects: ['Chat Application', 'Blog Platform', 'E-commerce Backend']
+    },
+    'Java': {
+      description: 'Object-oriented programming language for enterprise applications.',
+      experience: '2+ years',
+      projects: ['Inventory Management System', 'Android Apps', 'Web Services']
+    },
+    'TypeScript': {
+      description: 'Typed superset of JavaScript that compiles to plain JavaScript.',
+      experience: '1+ years',
+      projects: ['Portfolio Website', 'API Services', 'Data Visualization']
+    },
+    'Node.js': {
+      description: 'JavaScript runtime for server-side development.',
+      experience: '2+ years',
+      projects: ['Chat Application', 'API Services', 'Real-time Dashboard']
+    },
+    'Git & GitHub': {
+      description: 'Version control system and collaborative platform.',
+      experience: '3+ years',
+      projects: ['All Projects', 'Open Source Contributions', 'Team Collaborations']
+    }
+  };
 
   // Map skill names to a few concise tags to replace the old progress bar
   const tagsMap: Record<string, string[]> = {
@@ -76,8 +116,7 @@ const Skills = () => {
     'JavaScript': ['ES6+', 'Async', 'DOM'],
     'React': ['Hooks', 'Router', 'State'],
     'MongoDB': ['Schema', 'Queries', 'Aggregation'],
-    'Python': ['Pandas', 'Scripts', 'Automation'],
-    'Data Analytics': ['Exploration', 'Charts', 'Insights'],
+    'Java': ['OOP', 'Spring', 'Android'],
     'TypeScript': ['Types', 'Generics', 'Strict'],
     'Node.js': ['APIs', 'Express', 'REST'],
     'Git & GitHub': ['Branching', 'PRs', 'Reviews']
@@ -133,6 +172,7 @@ const Skills = () => {
             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
             <span>Continuously learning and improving</span>
           </div>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">Click on my name in the assistant to learn more about my skills</p>
         </div>
         
         <div 
@@ -148,6 +188,10 @@ const Skills = () => {
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
                 transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
+              }}
+              onClick={() => {
+                setSelectedSkill(skill);
+                setIsModalOpen(true);
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-50 dark:to-gray-700/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -198,6 +242,87 @@ const Skills = () => {
             </div>
           ))}
         </div>
+
+        {/* Skill Detail Modal */}
+        {isModalOpen && selectedSkill && (
+          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto border border-gray-200 dark:border-gray-700">
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-4">
+                    <div 
+                      className="flex items-center justify-center w-16 h-16 rounded-2xl bg-white dark:bg-gray-700 shadow-lg border-2" 
+                      style={{ borderColor: selectedSkill.color + '20', color: selectedSkill.color }}
+                    >
+                      {selectedSkill.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{selectedSkill.name}</h3>
+                      <span
+                        className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold mt-1"
+                        style={{ backgroundColor: selectedSkill.color + '20', color: selectedSkill.color }}
+                      >
+                        {getLevel(selectedSkill.percentage)}
+                      </span>
+                    </div>
+                  </div>
+                  <button 
+                    onClick={() => setIsModalOpen(false)}
+                    className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  >
+                    <X className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+                  </button>
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Description</h4>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {skillDetails[selectedSkill.name]?.description || 'No description available.'}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Experience</h4>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {skillDetails[selectedSkill.name]?.experience || 'N/A'}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Key Projects</h4>
+                    <ul className="space-y-2">
+                      {skillDetails[selectedSkill.name]?.projects.map((project, index) => (
+                        <li key={index} className="flex items-center gap-2">
+                          <div 
+                            className="w-2 h-2 rounded-full" 
+                            style={{ backgroundColor: selectedSkill.color }}
+                          ></div>
+                          <span className="text-gray-600 dark:text-gray-400">{project}</span>
+                        </li>
+                      )) || <li className="text-gray-600 dark:text-gray-400">No projects listed.</li>}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Related Skills</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {(tagsMap[selectedSkill.name] || []).map((tag, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1 rounded-md text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+                          style={{ borderColor: selectedSkill.color + '30' }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -19,11 +19,35 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Hotel Management System',
+    description: 'A comprehensive hotel management solution with booking, room allocation, and billing features.',
+    image: '/deepak maheta/hotel.png',
+    technologies: ['MongoDB', 'Express', 'React', 'Node.js'],
+    demoUrl: 'https://stayease-animate-main-1.onrender.com',
+    githubUrl: 'https://github.com/D216-cloud/stayease-animate-main',
+  },
+  {
+    title: 'YouTube Automation',
+    description: 'Automated YouTube content management using YouTube API, Google Auth, and Gemini AI.',
+    image: '/deepak maheta/youtube.png',
+    technologies: ['Next.js', 'YouTube API', 'Google Auth', 'Gemini API'],
+    demoUrl: 'https://yt-ai-main.vercel.app/',
+    githubUrl: 'https://github.com/D216-cloud/Yt-Ai-main',
+  },
+  {
+    title: 'AI-Powered HRMS',
+    description: 'An intelligent Human Resource Management System leveraging AI for employee management.',
+    image: '/deepak maheta/ai-hrms.png',
+    technologies: ['React', 'Node.js', 'Open API', 'MongoDB'],
+    demoUrl: 'https://ai-hrms-main-dewu.vercel.app/',
+    githubUrl: 'https://github.com/D216-cloud/ai-hrms-main',
+  },
+  {
     title: 'Job & Internship Portal',
     description: 'A comprehensive platform connecting students with job and internship opportunities. Features include profile creation, application tracking, and direct company connections.',
-    image: 'https://images.unsplash.com/photo-1579389083078-4e7018379f7e?q=80&w=2070',
+    image: '/deepak maheta/job.png',
     technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Redux'],
-    demoUrl: '#',
+    demoUrl: 'https://careersnap.onrender.com',
     githubUrl: 'https://github.com/D216-cloud/smar_job_internship-p--main',
   },
   {
@@ -37,18 +61,10 @@ const projects: Project[] = [
   {
     title: 'Modern Portfolio',
     description: 'My personal portfolio showcasing projects and skills. Features dark mode, responsive design, and interactive components.',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070',
+    image: '/deepak maheta/portfolio.png',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    demoUrl: 'https://modern-portfolio-luminary-84-main.onrender.com',
+    demoUrl: 'https://modern-portfolio-luminary-84-main-9xkh.onrender.com/',
     githubUrl: 'https://github.com/D216-cloud/modern-portfolio-luminary-84-main',
-  },
-  {
-    title: 'ScoreMyResume',
-    description: 'This section highlights my ongoing and recent projects, demonstrating my skills in building modern web applications using React, TypeScript, Tailwind CSS, and other cutting-edge technologies. Each project showcases a unique solution, from AI-powered chat platforms to resume analysis tools, reflecting my passion for creating impactful and user-friendly digital experiences.',
-    image: 'https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?q=80&w=2070',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'pdfjs-dist', 'Vercel'],
-    demoUrl: 'https://score-my-resume-rust.vercel.app/',
-    githubUrl: '',
   },
 ];
 

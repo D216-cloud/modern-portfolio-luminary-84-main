@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import { Badge } from './ui/badge';
 import { assistantSystemPrompt } from '@/data/assistantContext';
 
 const LiveChat = () => {
@@ -10,7 +9,7 @@ const LiveChat = () => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hi! I'm Deepak's virtual assistant. How can I help you today?",
+      text: "Hi! I'm Deepak's virtual assistant. Click on Deepak's name to learn more about his education, projects, and skills. You can also ask me anything about his work!",
       isBot: true,
       timestamp: new Date()
     }
@@ -121,13 +120,10 @@ const LiveChat = () => {
         <Button
           onClick={() => setIsOpen(true)}
           size="icon"
-          className="bg-coral hover:bg-coral-dark text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 animate-glow relative"
+          className="bg-coral hover:bg-coral-dark text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 animate-glow"
           aria-label="Open chat"
         >
           <MessageCircle className="h-5 w-5" />
-          <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 py-0.5 animate-pulse">
-            1
-          </Badge>
         </Button>
       )}
 

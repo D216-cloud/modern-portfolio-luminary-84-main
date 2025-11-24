@@ -12,7 +12,7 @@ import AboutPage from "./pages/AboutPage";
 import SkillsPage from "./pages/SkillsPage";
 import EducationPage from "./pages/EducationPage";
 import ContactPage from "./pages/ContactPage";
-import ChatPage from "./pages/ChatPage";
+import ResumePage from "./pages/ResumePage";
 
 const queryClient = new QueryClient();
 
@@ -36,7 +36,7 @@ const AnimatedRoutes = () => {
           <Route path="/education" element={<EducationPage />} />
           <Route path="/projects" element={<AllProjects />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/chat" element={<ChatPage />} />
+          <Route path="/resume" element={<ResumePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>

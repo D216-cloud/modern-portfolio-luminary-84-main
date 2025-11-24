@@ -118,7 +118,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <p className="font-semibold text-white/90 text-sm uppercase tracking-wide mb-1">Email Address</p>
-                        <p className="text-white text-lg font-medium">deepak.maheta117671@marwadiuniversity.ac.in</p>
+                        <p className="text-white text-lg font-medium">deepakmaheta49@gmail.com</p>
                       </div>
                     </div>
                     
@@ -128,7 +128,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <p className="font-semibold text-white/90 text-sm uppercase tracking-wide mb-1">Phone Number</p>
-                        <p className="text-white text-lg font-medium">+91 9876543210</p>
+                        <p className="text-white text-lg font-medium">8849719200</p>
                       </div>
                     </div>
                     
@@ -251,7 +251,7 @@ const Contact = () => {
                     {/* Quick actions */}
                     <div className="flex items-center justify-between text-sm">
                       <div className="flex items-center gap-3">
-                        <a href="mailto:deepak.maheta117671@marwadiuniversity.ac.in" className="inline-flex items-center gap-1 text-coral hover:underline">
+                        <a href="mailto:deepakmaheta49@gmail.com" className="inline-flex items-center gap-1 text-coral hover:underline">
                           <ExternalLink className="w-4 h-4" />
                           Open mail app
                         </a>
@@ -259,7 +259,7 @@ const Contact = () => {
                           type="button"
                           className="inline-flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-coral"
                           onClick={async () => {
-                            await navigator.clipboard.writeText('deepak.maheta117671@marwadiuniversity.ac.in');
+                            await navigator.clipboard.writeText('deepakmaheta49@gmail.com');
                             setCopied(true);
                             setTimeout(() => setCopied(false), 1500);
                           }}

@@ -48,6 +48,7 @@ const Education = () => {
         <div className="max-w-3xl mx-auto mb-12 text-center">
           <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300">Educational Journey</h3>
           <p className="text-gray-600 dark:text-gray-400">My academic background and qualifications</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">Click on my name in the assistant to learn more about my education</p>
         </div>
         
         <div className="max-w-4xl mx-auto space-y-8">

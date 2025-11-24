@@ -51,8 +51,8 @@ const About = () => {
                     <div className="w-10 h-10 rounded-lg bg-coral/10 text-coral flex items-center justify-center mb-3">
                       <BarChart2 className="w-5 h-5" />
                     </div>
-                    <h5 className="font-semibold mb-1">Data Analysis</h5>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Turning data into insights and decisions.</p>
+                    <h5 className="font-semibold mb-1">Fullstack Developer</h5>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Building complete web applications from frontend to backend.</p>
                   </div>
                   <div className="group rounded-xl p-4 bg-gray-50 dark:bg-gray-800/70 border border-gray-200/70 dark:border-gray-700/60 hover:shadow-md transition-all">
                     <div className="w-10 h-10 rounded-lg bg-coral/10 text-coral flex items-center justify-center mb-3">
@@ -66,8 +66,9 @@ const About = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a 
-                  href="/deepak maheta/resume-deepak-maheta.pdf" 
-                  download="Deepak_Maheta_Resume.pdf"
+                  href="/deepak maheta/mahetadeepak_cv(1.0).pdf" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-center justify-center gap-3 bg-coral hover:bg-coral-dark text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   <svg className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,7 +104,7 @@ const About = () => {
                   <div className="glass-card p-4 rounded-xl relative overflow-hidden">
                     <div className="absolute -top-6 -right-6 w-12 h-12 bg-coral/10 rounded-full"></div>
                     <p className="font-medium text-coral">Email:</p>
-                    <p className="text-gray-600 dark:text-gray-400 font-medium">deepak.maheta117671@marwadiuniversity.ac.in</p>
+                    <p className="text-gray-600 dark:text-gray-400 font-medium">deepakmaheta49@gmail.com</p>
                   </div>
                   
                   <div className="glass-card p-4 rounded-xl relative overflow-hidden">

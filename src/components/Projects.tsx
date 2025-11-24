@@ -14,6 +14,30 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Hotel Management System',
+    description: 'A comprehensive hotel management solution with booking, room allocation, and billing features.',
+    image: '/deepak maheta/hotel.png',
+    technologies: ['MongoDB', 'Express', 'React', 'Node.js'],
+    demoUrl: 'https://stayease-animate-main-1.onrender.com',
+    githubUrl: 'https://github.com/D216-cloud/stayease-animate-main',
+  },
+  {
+    title: 'YouTube Automation',
+    description: 'Automated YouTube content management using YouTube API, Google Auth, and Gemini AI.',
+    image: '/deepak maheta/youtube.png',
+    technologies: ['Next.js', 'YouTube API', 'Google Auth', 'Gemini API'],
+    demoUrl: 'https://yt-ai-main.vercel.app/',
+    githubUrl: 'https://github.com/D216-cloud/Yt-Ai-main',
+  },
+  {
+    title: 'AI-Powered HRMS',
+    description: 'An intelligent Human Resource Management System leveraging AI for employee management.',
+    image: '/deepak maheta/ai-hrms.png',
+    technologies: ['React', 'Node.js', 'Open API', 'MongoDB'],
+    demoUrl: 'https://ai-hrms-main-dewu.vercel.app/',
+    githubUrl: 'https://github.com/D216-cloud/ai-hrms-main',
+  },
+  {
     title: 'Personal Portfolio',
     description: 'A responsive portfolio website built with React and Tailwind CSS.',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070',
@@ -54,6 +78,7 @@ const Projects = () => {
         <div className="max-w-3xl mx-auto mb-12 text-center">
           <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300">My Projects</h3>
           <p className="text-gray-600 dark:text-gray-400">Showcasing my creative work and technical skills</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">Click on my name in the assistant to learn more about my projects</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

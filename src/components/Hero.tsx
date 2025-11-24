@@ -19,7 +19,7 @@ const Hero = () => {
             <Sparkles className="h-3 w-3" />
             <TypeWriter 
               texts={[
-                "Web Developer & Data Analyst",
+                "Web Developer",
                 "React.js Enthusiast",
                 "Problem Solver",
                 "UI/UX Designer"
@@ -47,7 +47,7 @@ const Hero = () => {
           </p>
           {/* Highlights */}
           <ul className="flex flex-wrap gap-2 mb-6">
-            {['React', 'TypeScript', 'Node.js', 'Tailwind', 'Data Analysis'].map((tag) => (
+            {['React', 'TypeScript', 'Node.js', 'Tailwind', 'Java'].map((tag) => (
               <li key={tag} className="px-2.5 py-1 rounded-md text-[11px] md:text-xs bg-white/70 dark:bg-gray-800/60 text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-gray-700/60 shadow-sm">
                 {tag}
               </li>
@@ -55,13 +55,13 @@ const Hero = () => {
           </ul>
           
           <div className="flex gap-3 mb-6">
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-2 bg-white/90 dark:bg-gray-800/90 rounded-full shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral/10">
+            <a href="https://github.com/deepak-maheta-55b90a339" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-2 bg-white/90 dark:bg-gray-800/90 rounded-full shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral/10">
               <Github className="h-4 w-4 md:h-5 md:w-5 text-gray-800 dark:text-white/90" />
             </a>
             <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 bg-white/90 dark:bg-gray-800/90 rounded-full shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral/10">
               <Linkedin className="h-4 w-4 md:h-5 md:w-5 text-gray-800 dark:text-white/90" />
             </a>
-            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 bg-white/90 dark:bg-gray-800/90 rounded-full shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral/10">
+            <a href="https://www.instagram.com/deepak_maheta_01/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 bg-white/90 dark:bg-gray-800/90 rounded-full shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral/10">
               <Instagram className="h-4 w-4 md:h-5 md:w-5 text-gray-800 dark:text-white/90" />
             </a>
           </div>
@@ -84,7 +84,7 @@ const Hero = () => {
               </Button>
             </Link>
             <a
-              href="/deepak maheta/resume-deepak-maheta.pdf"
+              href="/deepak maheta/mahetadeepak_cv(1.0).pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -121,10 +121,10 @@ const Hero = () => {
             {!isMobile && (
               <>
                 <div className="absolute top-5 -right-5 w-10 h-10 bg-white/95 dark:bg-gray-800/95 rounded-full shadow-md flex items-center justify-center z-20 animate-bounce [animation-duration:3s]">
-                  <span className="text-coral font-bold text-xs">React</span>
+                  <span className="text-coral font-bold text-xs">Web Dev</span>
                 </div>
                 <div className="absolute bottom-5 -left-5 w-10 h-10 bg-white/95 dark:bg-gray-800/95 rounded-full shadow-md flex items-center justify-center z-20 animate-pulse [animation-duration:2.5s]">
-                  <span className="text-coral font-bold text-xs">Data</span>
+                  <span className="text-coral font-bold text-xs">Node.js</span>
                 </div>
               </>
             )}
